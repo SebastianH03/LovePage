@@ -1,0 +1,76 @@
+.fourth-page {
+    height: 100vh;
+    overflow-y: hidden; /* Oculta el desplazamiento solo en el eje Y */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fourth-page.dark {
+    background-color: #1a1a1d;
+    color: #ffb6c1;
+}
+
+.fourth-header {
+    background-color: #ffe6e6; /* Fondo similar al resto de la página */
+    width: 100%;
+    height: 30vh; /* Ajusta la altura al 30% de la ventana */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.fourth-page.dark .fourth-header {
+    background-color: #2e2c38;
+}
+
+.fourth-header h1 {
+    font-size: 4rem; 
+    color: #ff6f91; 
+    margin: 0;
+    text-align: center;
+}
+
+.theme-switcher {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #fff;
+    color: #ff6f91;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.theme-switcher:hover {
+    background-color: #f0f0f0;
+}
+
+.sections-container {
+    transition: transform 0.8s ease-in-out;
+    width: 100%;
+}
+
+.section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.dedication-text {
+    font-size: 2rem;
+    color: #333;
+    max-width: 800px;
+    line-height: 1.6;
+}
+
+.fourth-page.dark .dedication-text {
+    color: #ffb6c1;
+}

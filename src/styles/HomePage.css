@@ -1,0 +1,246 @@
+/* Estilo general del contenedor */
+.home-container {
+  background-color: #ffe6e6; /* Panel rosa */
+  width: 100%; /* Ocupar todo el ancho */
+  max-width: 100vw;
+  padding: 20px;
+  font-family: 'Great Vibes', cursive;
+  margin: 0; /* Sin márgenes */
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra verticalmente */
+  align-items: center; /* Centra horizontalmente */
+  height: 100vh; /* Hacer que el contenedor cubra toda la altura de la pantalla */
+}
+
+/* Fondo blanco debajo del panel */
+body {
+  background-color: white; /* Mantiene el fondo blanco fuera del panel */
+}
+
+/* Ajustes para pantallas grandes */
+@media (min-width: 768px) {
+  .home-container {
+    padding: 50px;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+  }
+
+  .continue-button {
+    padding: 15px 30px;
+    font-size: 20px;
+  }
+}
+
+/* Modo oscuro aplicado a toda la página */
+.home-container.dark {
+  background-color: #2e2c38; /* Fondo del panel en modo oscuro */
+  color: #ffb6c1;
+}
+
+body.dark-mode {
+  background-color: #1a1a1d; /* Fondo oscuro para toda la página */
+}
+
+.home-container.dark h1 {
+  color: #ffe6f2;
+}
+
+.home-container.dark p {
+  color: #ffd1dc;
+}
+
+.home-container.dark .continue-button {
+  background-color: #ff3e61;
+  color: #fff;
+}
+
+.home-container.dark .continue-button:hover {
+  background-color: #ff6f91;
+}
+  
+
+/* Estilo del subtítulo */
+p {
+  font-size: 1.8rem; /* Tamaño del subtítulo */
+  text-align: center;
+  margin-top: -10px; /* Usamos un margen negativo para acercarlo más al título */
+  line-height: 1.4;
+}
+
+/* Ajustes para pantallas grandes */
+@media (min-width: 768px) {
+  p {
+    font-size: 2.2rem; /* Tamaño mayor en pantallas grandes */
+    margin-top: -15px; /* Usamos un margen negativo mayor en pantallas grandes */
+  }
+}
+
+/* Botón de cambio de tema */
+.theme-switcher {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 30px; /* Botón más grande */
+  background-color: #fff;
+  color: #ff6f91;
+  border-radius: 30px; /* Bordes más suaves */
+  cursor: pointer;
+  font-size: 18px; /* Texto más grande */
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.theme-switcher:hover {
+  transform: scale(1.05);
+  background-color: #ff3e61;
+  color: white;
+}
+
+/* Modo oscuro aplicado al botón */
+body.dark-mode .theme-switcher {
+  background-color: #2e2c38;
+  color: #ffb6c1;
+}
+
+body.dark-mode .theme-switcher:hover {
+  background-color: #ff3e61;
+  color: white;
+}
+
+/* Botón "Continuemos" */
+.continue-button {
+  background-color: #ff6f91;
+  border: none;
+  color: white;
+  padding: 20px 40px;
+  font-size: 22px;
+  border-radius: 30px;
+  cursor: pointer;
+  position: relative; /* Para los corazones */
+  overflow: hidden; /* Asegura que los corazones no se desborden */
+  transition: background-color 0.3s ease-in-out;
+  z-index: 1;
+}
+
+/* Corazones que aparecen en hover */
+.continue-button .hearts {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  opacity: 0; /* Ocultos por defecto */
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Mostrar los corazones en hover */
+.continue-button:hover .hearts {
+  opacity: 1; /* Aparecen al hacer hover */
+}
+
+/* Estilo para los corazones */
+.heart {
+  position: absolute;
+  font-size: 20px;
+  color: #32CD32; /* Corazones verdes */
+  opacity: 0;
+  animation: floatUp 3s infinite ease-in-out;
+}
+
+/* Configuramos más corazones distribuidos a lo largo del botón */
+.heart:nth-child(1) { left: 10%; animation-delay: 0s; }
+.heart:nth-child(2) { left: 20%; animation-delay: 0.3s; }
+.heart:nth-child(3) { left: 30%; animation-delay: 0.6s; }
+.heart:nth-child(4) { left: 40%; animation-delay: 0.9s; }
+.heart:nth-child(5) { left: 50%; animation-delay: 1.2s; }
+.heart:nth-child(6) { left: 60%; animation-delay: 1.5s; }
+.heart:nth-child(7) { left: 70%; animation-delay: 1.8s; }
+.heart:nth-child(8) { left: 80%; animation-delay: 2.1s; }
+.heart:nth-child(9) { left: 90%; animation-delay: 2.4s; }
+.heart:nth-child(10) { left: 95%; animation-delay: 2.7s; }
+
+/* Animación de los corazones */
+@keyframes floatUp {
+  0% {
+    transform: translateY(30px) scale(0.8); /* Comienzan abajo */
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-30px) scale(1); /* Suben por el botón */
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-60px) scale(0.8); /* Se mueven completamente hacia arriba */
+    opacity: 0;
+  }
+}
+
+
+/* Hover del botón con escalado */
+.continue-button:hover {
+  background-color: #ff3e61;
+  transform: scale(1.1);
+}
+
+/* Contenedor de flores */
+.flowers-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 25vh; /* Ocupa al menos un cuarto de la pantalla */
+  z-index: 999;
+  display: flex;
+  justify-content: space-around;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Mostrar flores cuando se hace clic */
+.show-flowers {
+  opacity: 1; /* Las flores aparecerán */
+}
+
+/* Estilo para las imágenes de las flores */
+/* Estilo para las imágenes de las flores */
+.flower {
+  width: 100px; /* Aumentamos el ancho a 80px */
+  height: auto; /* Mantiene la proporción de la altura */
+  position: relative;
+  animation: riseUp 3s forwards ease-in-out;
+}
+
+
+/* Animación de las flores */
+@keyframes riseUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-30px); /* Las flores ahora suben solo 30px en lugar de 100px */
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+
+

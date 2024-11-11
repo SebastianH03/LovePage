@@ -1,0 +1,79 @@
+/* Estilos específicos para la ThirdPage */
+.third-page {
+    background-color: #ffe6e6; /* Fondo igual al de otras páginas */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Header ocupando el 30% del alto de la página */
+  .third-header {
+    background-color: #ffe6e6;
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .third-header h1 {
+    font-size: 4rem;
+    color: #ff6f91;
+    margin: 0;
+    text-align: center;
+  }
+  
+  /* Estilo del mensaje en el centro */
+  .third-content h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  /* Contenedor de los botones */
+.third-buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Asegura que estén cerca */
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+/* Estilos para ambos botones */
+.third-love-button {
+    background-color: #ff6f91;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Botón "Sí" con efecto hover */
+.third-yes-button:hover {
+    background-color: #ff3e61;
+    transform: scale(1.1);
+}
+
+/* Botón "No :c" con posición inicial a la derecha del botón "SI TE AMOO" */
+.third-no-button {
+    position: absolute; /* Posición inicial relativa al contenedor */
+    left: 100%; /* Justo al lado derecho de "SI TE AMOO" */
+    transition: top 0.3s ease, left 0.3s ease;
+    margin-left: -180px;
+    width: 150px;
+}
+
+.third-no-button.moving {
+    position: fixed; /* Permite que el botón se mueva por toda la pantalla */
+}
+
+  
+  
